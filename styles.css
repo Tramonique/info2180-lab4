@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f7f7fb;
+  color: #1f1f2e;
+  line-height: 1.5;
+  padding: 32px 16px;
+}
+
+/* Header */
+h1 {
+  background: linear-gradient(90deg, 
+      #e9e3ff 0%,         
+      #f7c5e7 33%,       
+      #c8e7ff 66%   
+  );
+  color: #2a214a;
+  padding: 18px 20px;
+  border-radius: 14px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 22px auto;
+  box-shadow: 0 6px 18px rgba(46, 36, 90, 0.08);
+  letter-spacing: 0.3px;
+}
+
+
+label,
+input,
+button,
+#result {
+  display: block;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #3a335a;
+}
+
+/* Search input */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d7d4e5;
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+  margin-bottom: 12px;
+}
+
+input[type="text"]:focus {
+  border-color: #a79bda;
+  box-shadow: 0 0 0 4px rgba(167, 155, 218, 0.25);
+}
+
+/* Search button */
+button#search {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 12px;
+  background: #6f5bd6;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 18px rgba(111, 91, 214, 0.25);
+  margin-bottom: 18px;
+}
+
+button#search:hover {
+  background: #5c49bf;
+}
+
+button#search:active {
+  transform: translateY(1px);
+}
+
+/* Results card */
+#result {
+  background: #ffffff;
+  border: 1px solid #ebe8f4;
+  border-radius: 14px;
+  padding: 16px 18px;
+  min-height: 72px;
+  box-shadow: 0 8px 20px rgba(35, 30, 60, 0.06);
+}
+
+/* List view */
+#result ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+#result li {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f4f2fb;
+  color: #2a214a;
+}
+
+/* Single hero view */
+#result h3 {
+  font-size: 1.35rem;
+  color: #2a214a;
+  margin-bottom: 4px;
+}
+
+#result h4 {
+  font-size: 1.05rem;
+  color: #5a4f86;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+#result p {
+  font-size: 0.98rem;
+  color: #2f2a44;
+}
