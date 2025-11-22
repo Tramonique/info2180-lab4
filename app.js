@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultDiv = document.querySelector("#result")
 
     button.addEventListener("click", () => {
-        const query = input,value.trim();
+        const query = input.value.trim();
 
         let url = "superheroes.php";
         if (query !== "") {

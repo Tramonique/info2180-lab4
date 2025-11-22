@@ -63,9 +63,17 @@ $superheroes = [
   ], 
 ];
 
+// Normalize only for comparison
+function normalize($str) {
+    $str = strtolower(trim($str));
+    $str = preg_replace('/\s+/', '', $str);
+    $str = preg_replace('/[^a-z0-9]/', '', $str);
+    return $str;
+}
+
 $query = "";
 if (isset($_GET["query"])) {
-    $query = strtolower(trim($_GET["query"]));
+    $query = normalize($_GET["query"]);
 }
 
 if ($query === "") {
@@ -80,9 +88,9 @@ if ($query === "") {
 $found = null;
 
 foreach ($superheroes as $superhero) {
-    $alias_lower = strtolower($superhero["alias"]);
-    $name_lower  = strtolower($superhero["name"]);
-    if ($alias_lower === $query || $name_lower === $query) {
+    $alias_norm = normalize($superhero["alias"]);
+    $name_norm  = normalize($superhero["name"]);
+    if ($alias_norm === $query || $name_norm === $query) {
         $found = $superhero;
         break;
     }
@@ -93,11 +101,8 @@ if ($found !== null) {
     echo "<h3>" . htmlspecialchars($found["alias"]) . "</h3>";
     echo "<h4>" . htmlspecialchars($found["name"]) . "</h4>";
     echo "<p>" . htmlspecialchars($found["biography"]) . "</p>";
-    exit;
+} else {
+    echo "<p>Superhero not found</p>";
 }
-
-// No match → show error message
-
-echo "<p>Superhero not found</p>";
 
 ?>
